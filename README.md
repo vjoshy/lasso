@@ -32,10 +32,7 @@ The main algorithms are in `functions/lasso.R`:
 
 ## Dependencies
 
-- `MASS` (multivariate normal generation)
-- `glmnet` (baseline comparison)
-- `dplyr`, `tidyr`, `ggplot2` (analysis and visualization)
-- `foreach`, `doParallel` (parallel execution)
+- `MASS` , `glmnet` , `dplyr`, `tidyr`, `ggplot2`  `foreach`, `doParallel` 
 
 ## Author
 
