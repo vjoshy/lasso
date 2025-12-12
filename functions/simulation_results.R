@@ -2,16 +2,23 @@
 # Description: Simulation results analysis script - plotting and summary
 # ==============================================================================
 
-final_simulation_results <- readRDS("final_simulation_results.rds")
-
 library(dplyr)
-final_simulation_results %>%
-  group_by(p, n, Method_Type)  %>%
-  summarize(precision = mean(Precision), recall = mean(Recall), f1 = mean(F1_Score)) %>%
-  View()
+
+final_simulation_results <- readRDS("data/final_simulation_results.rds") %>%
+  mutate(Method_Name = ifelse(Method_Name == "Ground Truth", "glmnet", Method_Name))
 
 
-library(dplyr)
+# final_simulation_results %>%
+#   group_by(p, n, Method_Type) %>%
+#   summarize(
+#     precision = mean(Precision), 
+#     recall = mean(Recall), 
+#     f1 = mean(F1_Score),
+#     .groups = "drop"
+#   ) %>%
+#   View()
+
+
 library(tidyr)
 library(ggplot2)
 

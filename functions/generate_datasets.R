@@ -86,7 +86,7 @@ for(i in 1:total_scenarios) {
 
     X_no_int <- data$X[, -1] 
     lambda_max <- max(abs(t(X_no_int) %*% data$y))
-    lambda_seq <- exp(seq(log(lambda_max), log(lambda_max * 0.01), length.out = 50))
+    lambda_seq <- exp(seq(log(lambda_max), log(lambda_max * 0.001), length.out = 100))
 
     all_datasets[[counter]] <- list(
       id = counter,
